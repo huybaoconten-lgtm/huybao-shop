@@ -3,31 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Store Key Tự Động</title>
+  <title>Huy Bảo Shop - Store Tự Động</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #0d0c1d; color: #fff; padding: 14px; padding-bottom: 40px; }
+    
+    /* Khung thông tin tài khoản đồng bộ */
     .user-card { background: linear-gradient(135deg, #16152b 0%, #221c3b 100%); border: 1px solid #ff007f; border-radius: 16px; padding: 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(255,0,127,0.2); }
     .user-info h4 { font-size: 15px; font-weight: bold; color: #fff; }
     .user-info p { font-size: 11px; color: #9ca3af; margin-top: 2px; }
     .balance-box { text-align: right; }
     .balance-box .money { font-size: 15px; font-weight: bold; color: #00ffcc; }
     .balance-box .badge { font-size: 9px; background: #ff007f; color: #fff; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 3px; font-weight: bold; }
+
+    /* Menu nút nhanh */
     .quick-menu { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 14px; }
     .q-btn { background: #16152b; border: 1px solid #322c5c; border-radius: 12px; padding: 10px 2px; text-align: center; color: #fff; font-size: 11px; font-weight: 600; }
     .q-btn span { display: block; font-size: 16px; margin-bottom: 3px; }
+
+    /* Tiêu đề danh mục */
     .section-title { font-size: 14px; font-weight: bold; color: #c084fc; margin: 20px 0 10px 4px; }
+
+    /* Lưới sản phẩm */
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .card { background: #16152b; border: 1px solid #2e2a52; border-radius: 14px; padding: 12px; text-align: center; }
     .card-icon { font-size: 28px; margin-bottom: 6px; }
     .card h5 { font-size: 13px; color: #fff; margin-bottom: 2px; }
     .price { font-size: 12px; color: #00ffcc; font-weight: bold; margin-bottom: 8px; }
-    .btn-buy { width: 100%; background: #ff007f; border: none; padding: 7px; border-radius: 8px; font-weight: bold; font-size: 12px; color: #fff; }
+    .btn-buy { width: 100%; background: #ff007f; border: none; padding: 7px; border-radius: 8px; font-weight: bold; font-size: 12px; color: #fff; cursor: pointer; }
   </style>
 </head>
 <body>
 
+  <!-- Hiển thị tài khoản Telegram thực tế -->
   <div class="user-card">
     <div class="user-info">
       <h4 id="user-name">Đang tải...</h4>
@@ -35,47 +44,50 @@
     </div>
     <div class="balance-box">
       <div class="money">0đ</div>
-      <div class="badge">CUSTOMER</div>
+      <div class="badge">VIP MEMBER</div>
     </div>
   </div>
 
+  <!-- Bảng tính năng -->
   <div class="quick-menu">
-    <div class="q-btn" onclick="alert('Hệ thống nạp tiền tự động 24/7')"><span>💳</span>Nạp Tiền</div>
-    <div class="q-btn" onclick="alert('Kho key của bạn hiện trống')"><span>📦</span>Key Của Tôi</div>
-    <div class="q-btn" onclick="alert('Chưa có mã giảm giá')"><span>🎁</span>Voucher</div>
-    <div class="q-btn" onclick="alert('Liên hệ Admin trực tiếp')"><span>💬</span>Hỗ Trợ</div>
+    <div class="q-btn" onclick="alert('Hệ thống nạp tiền tự động qua Banking/Crypto')"><span>💳</span>Nạp Tiền</div>
+    <div class="q-btn" onclick="alert('Kho key của bạn hiện đang trống')"><span>📦</span>Key Của Tôi</div>
+    <div class="q-btn" onclick="alert('Chưa có mã giảm giá nào khả dụng')"><span>🎁</span>Voucher</div>
+    <div class="q-btn" onclick="alert('Vui lòng liên hệ Admin @HuyBao')"><span>💬</span>Hỗ Trợ</div>
   </div>
 
-  <div class="section-title">🎮 Danh Mục Sản Phẩm</div>
+  <div class="section-title">🔥 DANH MỤC SẢN PHẨM</div>
   
+  <!-- Danh sách sản phẩm game -->
   <div class="grid">
     <div class="card">
-      <div class="card-icon">🔥</div>
-      <h5>Free Fire</h5>
+      <div class="card-icon">⚡</div>
+      <h5>Hack Free Fire 1 Ngày</h5>
       <div class="price">20.000đ</div>
-      <button class="btn-buy" onclick="buyItem('Free Fire')">Mua Ngay</button>
+      <button class="btn-buy" onclick="buyItem('Free Fire 1 Ngày')">Mua Ngay</button>
     </div>
     <div class="card">
       <div class="card-icon">⚔️</div>
-      <h5>Liên Quân</h5>
+      <h5>Hack Liên Quân 1 Ngày</h5>
       <div class="price">30.000đ</div>
-      <button class="btn-buy" onclick="buyItem('Liên Quân')">Mua Ngay</button>
+      <button class="btn-buy" onclick="buyItem('Liên Quân 1 Ngày')">Mua Ngay</button>
     </div>
     <div class="card">
       <div class="card-icon">🎯</div>
-      <h5>PUBG Mobile</h5>
+      <h5>Hack PUBG Mobile</h5>
       <div class="price">50.000đ</div>
       <button class="btn-buy" onclick="buyItem('PUBG Mobile')">Mua Ngay</button>
     </div>
     <div class="card">
       <div class="card-icon">🎱</div>
-      <h5>8 Ball Pool</h5>
+      <h5>Hack 8 Ball Pool</h5>
       <div class="price">40.000đ</div>
       <button class="btn-buy" onclick="buyItem('8 Ball Pool')">Mua Ngay</button>
     </div>
   </div>
 
   <script>
+    // Kích hoạt nhận diện Telegram WebApp thực tế
     const tg = window.Telegram?.WebApp;
     if (tg) {
       tg.ready();
@@ -85,18 +97,14 @@
         document.getElementById('user-name').innerText = user.first_name + (user.last_name ? ' ' + user.last_name : '');
         document.getElementById('user-id').innerText = user.id;
       } else {
-        document.getElementById('user-name').innerText = "Thành viên";
-        document.getElementById('user-id').innerText = "6530932920";
+        document.getElementById('user-name').innerText = "Huy Bảo Shop";
+        document.getElementById('user-id').innerText = "Vip Official";
       }
-    } else {
-      document.getElementById('user-name').innerText = "Thành viên";
-      document.getElementById('user-id').innerText = "6530932920";
     }
 
-    function buyItem(gameName) {
-      alert(`Bạn đã chọn mua gói dịch vụ: ${gameName}\nVui lòng liên hệ Admin để thanh toán và nhận Key.`);
+    function buyItem(name) {
+      alert(`Bạn đã chọn: ${name}\nHệ thống đang xử lý đơn hàng tự động cho bạn!`);
     }
   </script>
 </body>
 </html>
-
